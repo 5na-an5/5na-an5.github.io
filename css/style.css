@@ -7,9 +7,13 @@ h1{
 }
 
 :root {
-  --particle-wine: #eb3182;
-  --particle-green: #0f51b3;
-  --particle-ivory: #a00fd1;
+  --particle-rich-gold: #D4AF37;
+  --particle-bright-gold: #FFC300;
+  --particle-champagne-gold: #F7E7CE;
+  --particle-light-gold: #F5D76E;
+  --particle-light-yellow: #FFFFE0;
+  --particle-gold-yellow: #F9E79F;
+  --particle-lemon-chiffon: #FFFACD;
 }
 
 body {
@@ -30,9 +34,26 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  background-color: currentColor;
   border-radius: 50%;
   pointer-events: none;
   will-change: transform, opacity;
+  box-shadow: 0 0 5px currentColor, 0 0 12px rgb(255 239 170 / 95%), 0 0 20px rgb(255 223 155 / 65%);
+  filter: brightness(1.45) drop-shadow(0 0 3px currentColor) drop-shadow(0 0 7px rgb(255 238 170 / 85%));
+}
+
+.particle--diamond,
+.particle--spark {
+  background-image: linear-gradient(135deg, var(--particle-lemon-chiffon), var(--particle-light-yellow) 24%, var(--particle-light-gold) 48%, var(--particle-bright-gold) 72%, var(--particle-rich-gold));
+  border-radius: 0;
+}
+
+.particle--diamond {
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.particle--spark {
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
 }
 /* ユーザーがアニメーションを減らす設定にしている場合、パーティクルを表示しない */
 @media (prefers-reduced-motion: reduce) {
