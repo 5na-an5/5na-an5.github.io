@@ -27,7 +27,7 @@
             'var(--particle-gold-yellow)',
             'var(--particle-lemon-chiffon)',
         ];
-        const maxParticles = 500;
+        const maxParticles = 900;
         let lastParticleTime = 0;
 
         function createParticle(x, y, directionX, directionY, pointerX, pointerY) {
@@ -39,11 +39,11 @@
             const shapeRoll = Math.random();
             const shape = shapeRoll < 0.14 ? 'particle--diamond' : shapeRoll < 0.22 ? 'particle--spark' : '';
             const size = shape ? 2.4 + Math.random() * 2.4 : 0.9 + Math.random() * 1.9;
-            const trailOffset = 6 + Math.random() * 14;
-            const sideOffset = (Math.random() - 0.5) * 3.2;
+            const trailOffset = Math.random() * 6;
+            const sideOffset = (Math.random() - 0.5) * 2.4;
             const spreadAngle = Math.random() * Math.PI * 2;
-            const spreadDistance = 20 + Math.random() * 32;
-            const duration = 1200 + Math.random() * 600;
+            const spreadDistance = 24 + Math.random() * 38;
+            const duration = 1450 + Math.random() * 650;
             const color = colors[Math.floor(Math.random() * colors.length)];
             const particleX = x - directionX * trailOffset - directionY * sideOffset;
             const particleY = y - directionY * trailOffset + directionX * sideOffset;
@@ -67,12 +67,13 @@
             const animation = particle.animate(
                 [
                     { transform: 'translate(0, 0) scale(0.65)', opacity: 0 },
-                    { transform: `translate(${followX * 0.55}px, ${followY * 0.55}px) scale(1.4)`, opacity: 1, offset: 0.16 },
-                    { transform: `translate(${followX}px, ${followY}px) scale(0.95)`, opacity: 0.85, offset: 0.3 },
-                    { transform: `translate(${followX}px, ${followY}px) scale(1.25)`, opacity: 1, offset: 0.38 },
+                    { transform: `translate(${followX * 0.35}px, ${followY * 0.35}px) scale(1.1)`, opacity: 1, offset: 0.18, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+                    { transform: `translate(${followX}px, ${followY}px) scale(0.9)`, opacity: 0.95, offset: 0.42, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+                    { transform: `translate(${followX}px, ${followY}px) scale(1.05)`, opacity: 1, offset: 0.52, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+                    { transform: `translate(${followX + driftX * 0.4}px, ${followY + driftY * 0.4}px) scale(0.75)`, opacity: 0.8, offset: 0.76, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
                     { transform: `translate(${driftX}px, ${driftY}px) scale(0.2)`, opacity: 0 },
                 ],
-                { duration, easing: 'ease-out', fill: 'forwards' },
+                { duration, easing: 'linear', fill: 'forwards' },
             );
 
             animation.onfinish = () => particle.remove();
@@ -83,7 +84,7 @@
 
             document.addEventListener('pointermove', (event) => {
                 const now = performance.now();
-                if (now - lastParticleTime < 10) return;
+                if (now - lastParticleTime < 8) return;
 
                 lastParticleTime = now;
                 const movementX = previousPointer ? event.clientX - previousPointer.x : 0;
@@ -93,15 +94,16 @@
                 const directionY = movementLength ? movementY / movementLength : 0;
                 const startX = previousPointer?.x ?? event.clientX;
                 const startY = previousPointer?.y ?? event.clientY;
-                const steps = Math.min(16, Math.max(1, Math.ceil(movementLength / 4)));
+                const steps = Math.min(40, Math.max(1, Math.ceil(movementLength / 2.5)));
 
                 previousPointer = { x: event.clientX, y: event.clientY };
                 for (let step = 1; step <= steps; step += 1) {
                     const progress = step / steps;
                     const particleX = startX + movementX * progress;
                     const particleY = startY + movementY * progress;
-                    createParticle(particleX, particleY, directionX, directionY, event.clientX, event.clientY);
-                    createParticle(particleX, particleY, directionX, directionY, event.clientX, event.clientY);
+                    for (let particleIndex = 0; particleIndex < 3; particleIndex += 1) {
+                        createParticle(particleX, particleY, directionX, directionY, event.clientX, event.clientY);
+                    }
                 }
             });
         }
