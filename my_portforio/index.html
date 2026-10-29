@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <meta name="description" content="My Portfolio website featuring selected works, about, gallery, and creative portfolio projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <nav class="main-nav" aria-label="メインナビゲーション">
+                <a href="#top" class="nav-link active">TOP</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#works" class="nav-link">WORKS</a>
+                <a href="#gallery" class="nav-link">GALLERY</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="top" class="hero section">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <div class="eyebrow">DESIGN &amp; CRAFT</div>
+                    <h1>MY PORTFOLIO</h1>
+                    <p class="lead">
+                        想いをすくい、余白に宿す。<br>
+                        静かに、深く、伝わるデザイン。
+                    </p>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="ring-wrap">
+                        <div class="ring"></div>
+                    </div>
+                    <div class="side-phrase">余白に、心を。</div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span class="scroll-line"></span>
+                <span class="scroll-label">Scroll Down</span>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container about-grid">
+                <div class="photo-panel">
+                    <div class="photo-frame">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="デスクで制作する人物の写真">
+                    </div>
+                    <div class="photo-caption">
+                        <span>A QUIET MOMENT OF CREATION</span>
+                        <small>写真はイメージです。ご自身の写真に差し替えてください。</small>
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <div class="section-notch"></div>
+                    <h2>About Me</h2>
+                    <p class="subheading">私について</p>
+
+                    <h3>丁寧に見つめ、<br>本質をかたちに。</h3>
+
+                    <p class="about-text">
+                        はじめまして、YOUR NAMEです。<br>
+                        日々の小さな気づきや、日本の美意識を大切にしながら、<br>
+                        Webとグラフィックのデザインを学んでいます。<br>
+                        伝えたい想いをひとつひとつ、心に残る形で提案していきます。
+                    </p>
+
+                    <div class="note">※ 自己紹介・経歴・スキルなど、実際の内容に置き換えてください。</div>
+
+                    <div class="info-panel">
+                        <div class="info-header">Background</div>
+                        <ul class="info-list">
+                            <li><span>20XX</span><em>デザインの学習を開始（起業）</em></li>
+                            <li><span>20XX</span><em>Web・グラフィックの自主制作（記入例）</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-panel">
+                        <div class="info-header">Skills &amp; Tools</div>
+                        <div class="badge-list">
+                            <span>HTML / CSS</span>
+                            <span>Figma</span>
+                            <span>Illustrator</span>
+                            <span>Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section strengths">
+            <div class="container">
+                <div class="strength-grid">
+                    <article class="strength-card">
+                        <span class="strength-title">顧客理解と分析力</span>
+                        <p>相手の価値観を丁寧に読み取り、伝えたいことを整理して、表現の方向性を明確にします。</p>
+                    </article>
+                    <article class="strength-card">
+                        <span class="strength-title">発信力</span>
+                        <p>メッセージに温度をのせ、見る人の興味と感情を動かす伝わりやすい表現を生み出します。</p>
+                    </article>
+                    <article class="strength-card">
+                        <span class="strength-title">ホスピタリティ精神</span>
+                        <p>相手の安心感を大切にし、信頼される関係性の中で、丁寧な制作をお届けします。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="section works-section">
+            <div class="container">
+                <div class="section-topline">
+                    <div class="section-line"></div>
+                    <h2>Selected Works</h2>
+                    <span class="section-side">01 / SELECTED PROJECTS</span>
+                </div>
+                <div id="works-grid" class="works-grid"></div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-topline gallery-topline">
+                    <div class="section-line"></div>
+                    <h2>Gallery</h2>
+                    <span class="section-side">ALL PROJECTS / 08</span>
+                </div>
+                <p class="gallery-intro">日常制作から授業の背景まで、表現の足跡を残しています。</p>
+                <div id="gallery-grid" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <section class="section faq-section" id="faq">
+            <div class="container faq-wrap">
+                <div class="section-topline faq-topline">
+                    <div class="section-line"></div>
+                    <h2>FAQ</h2>
+                </div>
+                <div id="faq-list" class="faq-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-line"></div>
+            <p>© 2026 YOUR NAME All Rights Reserved.</p>
+            <a href="#top" class="back-to-top" aria-label="トップへ戻る">↑</a>
+        </div>
+    </footer>
+</body>
+
+</html>
