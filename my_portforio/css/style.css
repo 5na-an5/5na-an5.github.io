@@ -151,9 +151,8 @@ select {
 
 .hero-copy h1 {
 	font-family: var(--font-ja);
-	font-size: clamp(3.4rem, 5.8vw, 7.5rem);
-	line-height: 0.9;
-	letter-spacing: -0.06em;
+	font-size: 60px;
+	letter-spacing: 0.5m;
 	font-weight: 500;
 	color: rgba(244, 241, 234, 0.96);
 }
@@ -240,8 +239,8 @@ select {
 
 .scroll-line {
 	display: inline-block;
-	width: 48px;
-	height: 1px;
+	width: 1px;
+	height: 50px;
 	background: var(--line-color);
 }
 
