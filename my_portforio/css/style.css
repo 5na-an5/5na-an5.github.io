@@ -106,23 +106,6 @@ select {
 	color: var(--primary-color);
 }
 
-/* .nav-link::after {
-	content: "";
-	position: absolute;
-	left: 50%;
-	bottom: -7px;
-	width: 0;
-	height: 1px;
-	background: var(--primary-color);
-	transform: translateX(-50%);
-	transition: width 0.25s ease;
-}
-
-.nav-link:hover::after,
-.nav-link:focus-visible::after {
-	width: 100%;
-} */
-
 .hero {
 	min-height: calc(100vh - 78px);
 	display: flex;
